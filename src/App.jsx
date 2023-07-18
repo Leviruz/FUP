@@ -1,23 +1,20 @@
-import { useState } from 'react'
-import ThemeButton from './components/MudarTema/ThemeButton'
+/* import { useState } from 'react' */
 
+import ThemeButton from "./components/ChangeThemeButton and GlobalTheme/ThemeButton";
+import Navbar from "./components/Navbar/Navbar";
+import TodoList from "./components/ToDoList/ToDoList";
+
+console.log(Date.now);
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleColorScheme = () => {
-    setDarkMode((prevState) => !prevState);
-  };
-
-    return (
-      <AppWrapper>
-        <GlobalStyles darkMode={darkMode} />
-        <header>
-          <h1>Hello React App!</h1>
-          <ThemeToggleButton />
-        </header>
-      </AppWrapper>
-    );
-
+  return (
+    <div className="container">
+      <div>
+        <Navbar />
+        <TodoList />
+   
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
