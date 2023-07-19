@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
 
-.ToggleStyle{
+.ToggleStyle,.add_button{
     border-radius: 8px;
     border: 1px solid transparent;
     padding: 0.6em 1.2em;
@@ -27,12 +27,13 @@ const GlobalStyles = createGlobalStyle`
     cursor: pointer;
     transition: border-color 0.25s;
 }
-.ToggleStyle:hover {
+.ToggleStyle,.add_button:hover {
     background-color: ${(props) => (props.darkMode ? "#747bff" : "#535bf2")};
     transition: 09ms linear;
   }
   .container{
-    border: ${(props) => (props.darkMode ? "1px solid #222" : "1px solid #fff")};
+    border: ${(props) =>
+      props.darkMode ? "1px solid #222" : "1px solid #fff"};
     width: 700px;
     padding-bottom: 20px;
     border-radius: 10px;

@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { FilterCSS } from "./FilterCSS";
 const Filter = () => {
+  // inicia o estado como uma string vazia
   const [search, setSearch] = useState("");
 
   const handleSearch = (event) => {
+    //alimenta o estado pegando o valor alvo de evento(no caso, letra digitada)
     setSearch(event.target.value);
   };
   /* console.log(search); */
