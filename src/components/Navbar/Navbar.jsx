@@ -1,4 +1,3 @@
-import React from "react";
 import ThemeButton from "../ChangeThemeButton and GlobalTheme/ThemeButton";
 import { NavStyle } from "./NavbarStyle";
 

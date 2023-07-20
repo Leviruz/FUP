@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FcCancel, FcOk } from "react-icons/fc";
-import Filter from "../FilterTool/Filter";
+
 import { TDLStyle } from "./ToDoListCSS";
 
 function TodoList() {
@@ -29,13 +29,15 @@ function TodoList() {
       setInputValue("");
     }
   };
-//função pra remover
+  //função pra remover
   const handleRemoveTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
-//função pra completar/desfazer complitude 
+  //função pra completar/desfazer complitude
   const handleToggleCompletion = (id) => {
+    //define uma var pra receber o map de a fazeres pra jogar na tela depois
     const updatedTodos = todos.map((todo) =>
+    //verifica o status de completed
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
     setTodos(updatedTodos);
@@ -44,15 +46,17 @@ function TodoList() {
   return (
     <TDLStyle>
       <div>
-        <Filter todos={todos}/>
-        <h2>Todo List</h2>
+        
+        <h3>To do List dinâmica</h3>
         <input
           type="text"
           value={inputValue}
           onChange={handleInputChange}
-          placeholder="Add a task"
+          placeholder="Adicione uma tarefa"
         />
-        <button onClick={handleAddTodo} className="add_button">Adicionar tarefa</button>
+        <button onClick={handleAddTodo} className="add_button">
+          Adicionar tarefa
+        </button>
         <ul>
           {todos.map((todo) => (
             <li key={todo.id}>
@@ -64,7 +68,6 @@ function TodoList() {
                 {todo.text}
               </span>
               <button onClick={() => handleRemoveTodo(todo.id)}>
-                
                 <FcCancel />
               </button>
               <button onClick={() => handleToggleCompletion(todo.id)}>
